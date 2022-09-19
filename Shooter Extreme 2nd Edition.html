@@ -375,7 +375,7 @@ current4 = l;
 kill4();
 } else {
 bloodSpray();
-console.log('Achtung!');
+//console.log('Achtung!');
 }
 } else {
     bloodSpray();
@@ -391,7 +391,7 @@ if (guntype === 0) {
 } else if (guntype > 0) {
     lucky = 1;
 }
-console.log('lucky is ' + lucky.toString());
+//console.log('lucky is ' + lucky.toString());
 headshoting();
 bloodSpray();
 hitsingame++;
@@ -453,7 +453,7 @@ current4 = l;
 kill4();
 } else {
 bloodSpray();
-console.log('Achtung!');
+//console.log('Achtung!');
 }
 } else {
     bloodSpray();
@@ -474,7 +474,7 @@ bloodSpray2();
 current = l;
 kill();
 } else {
-console.log('Achtung!');
+//console.log('Achtung!');
 bloodSpray();
 }
 } else {
@@ -490,7 +490,7 @@ current2 = l;
 kill2();
 } else {
 bloodSpray();
-console.log('Achtung!');
+//console.log('Achtung!');
 }
 } else {
 if (started3 === 0) {
@@ -505,7 +505,7 @@ current3 = l;
 kill3();
 } else {
 bloodSpray();
-console.log('Achtung!');
+//console.log('Achtung!');
 }
 } else {
 if (started4 === 0) {
@@ -520,7 +520,7 @@ current4 = l;
 kill4();
 } else {
 bloodSpray();
-console.log('Achtung!');
+//console.log('Achtung!');
 }
 } else {
     bloodSpray();
@@ -702,7 +702,7 @@ function shoot() {
      if (reloading === 0) {
     if (guntype === 0) {
      shooting = 1;
-console.log('Mh');
+//console.log('Mh');
      $('.guns').attr('src',
 'http://piskel-imgstore-b.appspot.com/img/d0cad86b-6319-11e7-904a-b1f264b16906.gif');
      setTimeout(function() {
@@ -716,7 +716,7 @@ console.log('Mh');
      }, 200);
     } else if (guntype === 1) {
         shooting = 1;
-console.log('Mh');
+//console.log('Mh');
      $('.guns').attr('src',
 'http://piskel-imgstore-b.appspot.com/img/f57f1914-6cf8-11e7-afe0-699a4a813824.gif');
      setTimeout(function() {
@@ -835,7 +835,7 @@ for (var i = 0; i < enemiesNumber + 1; i++) {
 if (parseInt(enemiesArray[i * 6 - 3]) > 0) {
 if (parseInt(enemiesArray[i * 6 - 4]) < 11) {
 if (parseInt(enemiesArray[i * 6 - 5]) === 0) {
-console.log('hallelujah');
+//console.log('hallelujah');
 $('#enemy'+i.toString()).attr('src',
 'http://piskel-imgstore-b.appspot.com/img/5a76c28c-6316-11e7-a839-b1f264b16906.gif');
 $('#enemy'+i.toString()).css('width',
@@ -985,7 +985,7 @@ if ($('#crosshair').offset().top + 40 >
 $('#enemy'+j.toString()).offset().top +
 $('#enemy'+j.toString()).height() / 40) {
 enemiesArray[j * 6 - 2] = 2;
-console.log('Horaa!');
+//console.log('Horaa!');
 }
 }
 }
@@ -1022,7 +1022,7 @@ if ($('#crosshair').offset().top + 40 >
 $('#enemy'+j.toString()).offset().top +
 $('#enemy'+j.toString()).height() / 40) {
 enemiesArray[j * 6 - 2] = 2;
-console.log('Horaa!');
+//console.log('Horaa!');
 }
 }
 }
@@ -1614,23 +1614,23 @@ if (sandstarted === 0) {
 bloodtype = Random(1, 10);
 bloodSplat++;
 if (bloodtype === 1) {
-$('body').append('<imgsrc="http://www.imarvintpa.com/Mapping/Overlays/Blood/Blood%20splatter%2019-sc.png"id="splat'+bloodSplat.toString()+'"/>');
+$('body').append('<img src="http://www.imarvintpa.com/Mapping/Overlays/Blood/Blood%20splatter%2019-sc.png" id="splat'+bloodSplat.toString()+'"/>');
 } else if (bloodtype === 2) {
-$('body').append('<imgsrc="http://img14.deviantart.net/a426/i/2012/247/2/4/png_blood_by_paradise234-d5dkt3t.png"id="splat'+bloodSplat.toString()+'"/>');
+$('body').append('<img src="http://img14.deviantart.net/a426/i/2012/247/2/4/png_blood_by_paradise234-d5dkt3t.png" id="splat'+bloodSplat.toString()+'"/>');
 } else if (bloodtype === 3) {
-$('body').append('<imgsrc="http://www.powerpointhintergrund.com/uploads/2017/06/zombie-blood-splatter-wallpaper-psvitabloodtransparent--8.png"id="splat'+bloodSplat.toString()+'"/>');
+$('body').append('<img src="http://www.powerpointhintergrund.com/uploads/2017/06/zombie-blood-splatter-wallpaper-psvitabloodtransparent--8.png" id="splat'+bloodSplat.toString()+'"/>');
 } else if (bloodtype === 4) {
-$('body').append('<imgsrc="http://www.freeiconspng.com/uploads/blood-transparent-8.png"id="splat'+bloodSplat.toString()+'"/>');
+$('body').append('<img src="http://www.freeiconspng.com/uploads/blood-transparent-8.png" id="splat'+bloodSplat.toString()+'"/>');
 } else if (bloodtype === 5){
-$('body').append('<imgsrc="http://www.imarvintpa.com/Mapping/Overlays/Blood/Blood%20splatter%2012-sc.png"id="splat'+bloodSplat.toString()+'" />');
+$('body').append('<img src="http://www.imarvintpa.com/Mapping/Overlays/Blood/Blood%20splatter%2012-sc.png" id="splat'+bloodSplat.toString()+'" />');
 } else if (bloodtype === 6) {
-$('body').append('<imgsrc="http://pngimg.com/uploads/blood/blood_PNG6124.png"id="splat'+bloodSplat.toString()+'" />');
+$('body').append('<img src="http://pngimg.com/uploads/blood/blood_PNG6124.png" id="splat'+bloodSplat.toString()+'" />');
 } else if (bloodtype === 7) {
-$('body').append('<imgsrc="http://tubomania.t.u.pic.centerblog.net/66860253.png"id="splat'+bloodSplat.toString()+'" />');
+$('body').append('<img src="http://tubomania.t.u.pic.centerblog.net/66860253.png" id="splat'+bloodSplat.toString()+'" />');
 } else if (bloodtype === 8) {
-$('body').append('<imgsrc="http://www.freepngimg.com/thumb/blood/67-blood-png-image-thumb.png"id="splat'+bloodSplat.toString()+'" />');
+$('body').append('<img src="http://www.freepngimg.com/thumb/blood/67-blood-png-image-thumb.png" id="splat'+bloodSplat.toString()+'" />');
 } else if (bloodtype === 9) {
-$('body').append('<imgsrc="https://www.hrabova.info/wp-content/uploads/2017/01/krev.png"id="splat'+bloodSplat.toString()+'" />');
+$('body').append('<img src="https://www.hrabova.info/wp-content/uploads/2017/01/krev.png" id="splat'+bloodSplat.toString()+'" />');
 } else if (bloodtype === 10) {
 $('body').append('<imgsrc="https://lh3.googleusercontent.com/-iFNyyI8GXHk/V8g8dN4uVVI/AAAAAAAAAcM/nIem5lOhGQ4jIEwgAgtVMuzHTtcWFdBDACL0B/w800-h800/kisekae_2_prop___blood_splatter_by_zebuta-d9blxeo.png"id="splat'+bloodSplat.toString()+'" />');
 }
@@ -1640,7 +1640,7 @@ $('#splat'+bloodSplat.toString()).css('top', '40%');
 $('#splat'+bloodSplat.toString()).css('width', '350px');
 $('#splat'+bloodSplat.toString()).css('height', '350px');
 $('#splat'+bloodSplat.toString()).css('z-index', '150');
-console.log('His index is ' + $('#splat'+bloodSplat.toString()).css('z-index'));
+//console.log('His index is ' + $('#splat'+bloodSplat.toString()).css('z-index'));
 setTimeout(function() {
 if (health > 0) {
 for (var y = 0; y < bloodSplat + 1; y++) {
@@ -1900,7 +1900,7 @@ pinkcharge();
 }
 //pinkygo();
 function pinkcharge() {
-console.log('pinky is pinky' + pinkies.toString());
+//console.log('pinky is pinky' + pinkies.toString());
 $('pinky'+pinkies.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/d4ed81d7-90aa-11e7-8fbf-0bee969954c4.gif');
 setTimeout(function() {
 $('#pinky'+pinkies.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/c789f06e-90aa-11e7-8ea8-0bee969954c4.gif');
@@ -1910,7 +1910,7 @@ setTimeout(function() {
 $('#pinky'+pinkies.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/f2ce1051-90aa-11e7-b62c-0bee969954c4.gif');
 setTimeout(function() {
 $('#pinky'+pinkies.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/23aa0ff8-90ab-11e7-9ed4-0bee969954c4.gif');
-console.log($('pinky'+pinkies.toString()).width());
+//console.log($('pinky'+pinkies.toString()).width());
 $('pinky'+pinkies.toString()).css('height', ($('#pinky'+pinkies.toString()).height() + 1750).toString() + 'px');
 $('pinky'+pinkies.toString()).css('width', ($('#pinky'+pinkies.toString()).width() + 1750).toString() + 'px');
 setTimeout(function() {
@@ -1925,7 +1925,7 @@ setTimeout(function() {
 $('#pinky'+pinkies.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/a85d54e3-90ab-11e7-8d32-0bee969954c4.gif');
 $('pinky'+pinkies.toString()).css('height', ($('#pinky'+pinkies.toString()).height() + 1750).toString() + 'px');
 $('pinky'+pinkies.toString()).css('width', ($('#pinky'+pinkies.toString()).width() + 1750).toString() + 'px');
-console.log($('pinky'+pinkies.toString()).width());
+//console.log($('pinky'+pinkies.toString()).width());
 }, 200);
 }, 200);
 }, 200);
