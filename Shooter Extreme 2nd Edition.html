@@ -1,0 +1,1805 @@
+<html>
+ <body>
+ <p id="childb" >Child-Friendly Mode is Off<p/>
+ <div id="wavecompletediv">
+ <pre id="wavecompletep">Wave Complete</pre>
+ </div>
+<button id="deadbutton" onclick="stg()">Retry</button>
+<img id="homebutton" onclick="stg()" src="https://lh3.ggpht.com/A0x3jzuH1qRkE10HcTiT4qQr_6iAqVg-CTsoIqxnoIFyv92V91WI3KqiVlOvLtfoMRg=w300"/>
+<img src="http://img08.deviantart.net/9b82/i/2016/148/a/3/doom__2016____wallpaper_2_by_minionmask-da44fn4.jpg" id="titleimg"/>
+<img src="https://www.destructoid.com//ul/376645-doom_alt_boxart.0.0.jpg" id="titleimg2"/>
+<button id="sub" onclick="survivalstart()">Survival</button>
+<button id="sab" onclick="sandboxstart()">Sandbox Mode</button>
+<button id="exb" onclick="extrastart()">Extras</button>
+<div id="extrastuff">
+<center>
+<U>
+<h1 id="extratitle">Extras</h1>
+</U>
+<br/>
+<br/>
+<button onclick="newtip()" id="tipb">New Tip</button>
+<br/>
+<br/>
+<p id="highscorep">Highscore: 0</p>
+<br/>
+<pre>
+     Controls:
+     To move left: A
+     To move right: D
+     To shoot: W
+     To hide your crosshair: alt
+     To exit a game: Hide your crosshair then click the home button
+     If a new wave is not starting: press j
+     To throw a grenade: S
+     To use a boost: B
+     To enter god/No damage Mode: G
+     To spawn an imp in sandbox mode: i
+     Switch Guns (if unlocked): 1, 2 and 3.
+     Manual Reload: R
+Child-Friendly Mode: C
+     About:
+     DoomReborn™ is a registered trademark symbol and name, associated with the doom franchise.
+     First produced in 2017
+     48th version
+     all rights reserved
+     terms and conditions apply
+     Final Version
+     Credits:
+     Art and Design: Hamza
+     Sprites: ID software
+Source By: Doom 1
+Main Coder: Hamza
+     Main Programmer: Hamza
+     Music by: N/A
+     Sounds by: N/A
+     Review By: Aliya, Saira and Oz.
+     </pre>
+    <h4 id="tipp">TIP: If the next wave is not starting, press j!</h4>
+    <button id="childb" onclick="childfun()">Child-Friendly Mode is Off</button>
+</center>
+</div>
+<button id="addb">Add Imp (i)</button>
+<h2 id="godp">(g) GodMode = Off</h2>
+ <img src="https://www.packtpub.com/sites/default/files/new_blog_images/428/image015.jpg"
+id="diedS"/>
+ <p id="pointp">Wave: 1</p>
+ <p id="ammop">Ammo: 10</p>
+ <p id="healthp">Health: 100%</p>
+ <p id="boostp">Boosts: 0</p>
+ <p id="grenadep">Grenades: 0</p>
+ <p id="glitchp">Press j if Glitched</p>
+ <img src="https://riflescopesinfo.files.wordpress.com/2014/01/leupold-dot-reticle.png"
+id="crosshair"/>
+ <img src="http://piskel-imgstore-b.appspot.com/img/69252778-5a39-11e7-bc81-df860c749e98.gif"
+id="gun" class='guns' alt="guns"/>
+ <div id="reloadBox">
+ <h1 id="reloadp">Reloading...</h1>
+ </div>
+ <style>
+     #crosshair {
+         position: absolute;
+         width: 100px;
+         height: 100px;
+         z-index: 100;
+     }
+     #gun {
+         position: absolute;
+         width: 1000px;
+         height: 250px;
+         left: 40%;
+         top: 73%;
+         z-index: 50;
+     }
+     body {
+         overflow: hide;
+     }
+     #reloadp {
+         color: red;
+     }
+     #reloadBox {
+         background-color: gray;
+         z-index: 75;
+         width: 300px;
+         height: 100px;
+         text-align: center;
+         position: absolute;
+         left: 37%;
+         top: 20%;
+     }
+     #ammop {
+         color: blue;
+     }
+#healthp {
+color: springgreen
+}
+     #titleimg {
+         position: absolute;
+         left: 80;
+         top: 5%;
+         width: 500px;
+         height: 200px;
+         z-index: 50;
+     }
+     #titleimg2 {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         left: 0%;
+         top: 0%;
+     }
+     #sub {
+         position: absolute;
+         top: 40%;
+         left: 85%;
+         width: 150px;
+         height: 75px;
+         background-color: black;
+         color: crimson;
+         font-family: Times;
+     }
+     #sab {
+         position: absolute;
+         top: 50%;
+         left: 85%;
+         width: 150px;
+         height: 75px;
+         background-color: black;
+         color: crimson;
+         font-family: Times;
+     }
+     #exb {
+         position: absolute;
+         top: 60%;
+         left: 85%;
+         width: 150px;
+         height: 75px;
+         background-color: black;
+         color: crimson;
+         font-family: Times;
+     }
+     #addb {
+         position: absolute;
+         top: 40%;
+         left: 85%;
+         width: 125px;
+         height: 50px;
+         background-color: black;
+         color: crimson;
+         font-family: Times;
+     }
+     #godp {
+         position: absolute;
+         top: 10%;
+         left: 85%;
+         color: purple;
+         font-family: Times;
+     }
+     #diedS {
+         z-index: 500;
+     }
+     #deadbutton {
+         position: absolute;
+         width: 200px;
+         height: 100px;
+         background-color: crimson;
+         color: black;
+         left: 40%;
+         top: 75%;
+     }
+     #homebutton {
+         width: 50px;
+         height: 50px;
+     }
+#wavecompletep {
+position: absolute;
+left: 40%;
+top: 45%;
+color: red;
+}
+#wavecompletediv {
+position: absolute;
+left: 40%;
+top: 45%;
+width: 500px;
+height: 100px;
+background-color: blue;
+}
+ </style>
+ </body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script>
+localStorage.setItem('highscorelocal', 0);
+$('#addb').hide();
+$('#godp').hide();
+$('#crosshair').hide();
+$('#deadbutton').hide();
+$('#titleimg').show();
+$('#titleimg2').show();
+$('#survivalstart').show();
+$('#sandboxstart').show();
+$('#glitchp').hide();
+$('#healthp').hide();
+$('#ammop').hide();
+$('#pointp').hide();
+$('#godp').hide();
+$('#extrastuff').hide();
+$('#gun').hide();
+$('#boostp').hide();
+$('#grenadep').hide();
+ $('#diedS').css('width', $(document).width() + 'px');
+ $('#diedS').css('height', $(document).height() + 'px');
+  $('#diedS').hide();
+  $('#childb').hide();
+  $('#wavecompletep').hide();
+   $('#wavecompletediv').hide();
+ var enemiesArray = ['//'];
+ var tips = ['If you have the basic gun and are shooting the imp in the head and no blood is coming out, aim for the body!', 'Manually Reload at the end of every wave!', 'The chaingun is fast firing, but very heavy!', 'Save your grenades for later levels!', 'Think about which gun you should use your boosts on!', 'Think about which places are dangerous on the map!', 'Boosts make you go fast, but enemy can still hit you when you are speeding around!', 'Boosts come every 150 points!', 'Grenades come every 3 waves!', 'If the next wave is not starting, press j!', 'In sandbox mode, you have everything already unlocked!', 'A headshot gives you 10 points, and a body shot 5!', 'Child-Friendly mode is enabled by pressing C, and removes all the blood and gore!'];
+$('#homebutton').show();
+ $('#reloadBox').hide();
+ var gungiven = 0;
+ var guntype = 0;
+ var started2 = 0;
+ var current2 = 0;
+ var started3 = 0;
+ var current3 = 0;
+ var mouseX = 0;
+ var mouseY = 0;
+ var shooting = 0;
+ var enemiesNumber = 0;
+ var points = 0;
+ var ammo = 15;
+ var reloading = 0;
+ var current = 0;
+ var bloodNumber = 0;
+ var bloodNumber2 = 1000;
+ var bloodied = 0;
+  var bloodied2 = 0;
+ var started = 0;
+ var health = 100;
+ var bloodSplat = 0;
+ var bloodtype = Random(1, 5);
+ var headshots = 0;
+ var killtype = Random(1, 3);
+ var lucky = Random(1, 2);
+ var wave = 1;
+ var wavekills = 0;
+ var enemiesAdded = 0;
+ var interval = null;
+ var readyToAdd = 0;
+ var started = 0;
+ var sandstarted = 0;
+ var godMode = 0;
+ var hidden = 0;
+ var offmenu = 0;
+ var highscore = 0;
+ var speed = 45;
+ var boosts = 0;
+ var boosting = 0;
+ var boostNumber = 0;
+ var interval2 = null;
+ var started4 = 0;
+ var current4 = 0;
+ var grenades = 1;
+ var grenwave = 0;
+ var childmode = 0;
+ var completed = 0;
+function stg() {
+location.reload();
+}
+ function Random(min, max) {
+     return Math.floor(Math.random() * (max - min + 1)) + min;
+ }
+ $(document).on('mousemove', function(event) {
+     mouseX = event.pageX;
+     mouseY = event.pageY;
+ });
+ setInterval(function() {
+     $('#crosshair').css('left', mouseX - 50 + 'px');
+     $('#crosshair').css('top', mouseY - 50 + 'px');
+ }, 15);
+ $(document).keydown(function (e) {
+ key = e.keyCode;
+ switch (key) {
+     case 87:
+     if (reloading === 0) {
+     if (shooting === 0) {
+     if (ammo > 0) {
+     ammo = ammo - 1;
+     shoot();
+for (var l = 1; l < enemiesNumber + 1; l++) {
+if (parseInt(enemiesArray[l * 6 - 2]) > 0) {
+if (parseInt(enemiesArray[l * 6 - 2]) !== 1) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 1) {
+bloodSpray();
+enemiesArray[l * 6 - 3] = parseInt(enemiesArray[l * 6 - 3]) - 1;
+} else {
+if (started === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 5;
+started = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current = l;
+kill();
+} else {
+bloodSpray();
+}
+} else {
+if (started2 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 5;
+started2 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current2 = l;
+kill2();
+} else {
+bloodSpray();
+}
+} else {
+if (started3 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 5;
+started3 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current3 = l;
+kill3();
+} else {
+bloodSpray();
+}
+} else {
+if (started4 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started4 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current4 = l;
+kill4();
+} else {
+bloodSpray();
+console.log('Achtung!');
+}
+} else {
+    bloodSpray();
+}
+}
+}
+}
+}
+} else {
+if (parseInt(enemiesArray[l * 6 - 3]) > 1) {
+if (guntype === 0) {
+    lucky = Random(1, 2);
+} else if (guntype > 0) {
+    lucky = 1;
+}
+console.log('lucky is ' + lucky.toString());
+headshoting();
+bloodSpray();
+if (lucky === 2) {
+if (parseInt(enemiesArray[l * 6 - 3]) !== 1) {
+enemiesArray[l * 6 - 3] = parseInt(enemiesArray[l * 6 - 3]) - 1;
+} else {
+if (started === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current = l;
+kill();
+} else {
+bloodSpray();
+}
+} else {
+if (started2 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started2 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current2 = l;
+kill2();
+} else {
+bloodSpray();
+}
+} else {
+if (started3 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started3 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current3 = l;
+kill3();
+} else {
+bloodSpray();
+}
+} else {
+if (started4 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started4 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current4 = l;
+kill4();
+} else {
+bloodSpray();
+console.log('Achtung!');
+}
+} else {
+    bloodSpray();
+}
+}
+}
+}
+}
+} else {
+if (started === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current = l;
+kill();
+} else {
+console.log('Achtung!');
+bloodSpray();
+}
+} else {
+if (started2 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started2 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current2 = l;
+kill2();
+} else {
+bloodSpray();
+console.log('Achtung!');
+}
+} else {
+if (started3 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started3 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current3 = l;
+kill3();
+} else {
+bloodSpray();
+console.log('Achtung!');
+}
+} else {
+if (started4 === 0) {
+if (parseInt(enemiesArray[l * 6 - 3]) > 0) {
+points = points + 10;
+headshoting();
+started4 = 1;
+enemiesArray[l * 6 - 3] = 0;
+bloodSpray();
+bloodSpray2();
+current4 = l;
+kill4();
+} else {
+bloodSpray();
+console.log('Achtung!');
+}
+} else {
+    bloodSpray();
+}
+}
+}
+}
+}
+}
+}
+}
+}
+     } else {
+         reloading = 1;
+         $('#reloadBox').fadeIn('Slowest');
+         $('#reloadBox').fadeOut('Slowest');
+         $('#reloadBox').fadeIn('Slowest');
+         $('#reloadBox').fadeOut('Slowest');
+         setTimeout(function() {
+             reloading = 0;
+             ammo = 15;
+         }, 1300);
+     }
+}
+     }
+     break;
+case 65:
+if ($('#gun').offset().left > 0) {
+$('#gun').offset({left:  $('#gun').offset().left - speed, top:
+$('#gun').offset().top });
+}
+break;
+case 68:
+if ($('#gun').offset().left < 1680) {
+$('#gun').offset({left:  $('#gun').offset().left + speed, top:
+$('#gun').offset().top });
+}
+break;
+     case 73:
+        if (sandstarted === 1) {
+            addEnemy();
+        }
+    break;
+     case 71:
+         if (godMode === 0) {
+             godMode = 1;
+             $('#godp').html('(g) GodMode = On');
+         } else {
+             godMode = 0;
+             $('#godp').html('(g) GodMode = Off');
+         }
+    break;
+     case 74:
+         wavekills++;
+    break;
+     case 18:
+         if (offmenu === 1) {
+             if (hidden === 0) {
+                 hidden = 1;
+                 $('#crosshair').hide();
+             } else if (hidden === 1) {
+                 hidden = 0;
+                 $('#crosshair').show();
+             }
+         }
+     break;
+     case 49:
+         if (reloading === 0) {
+             if (shooting === 0) {
+                $('#gun').attr('src', 'http://piskel-imgstore-b.appspot.com/img/69252778-5a39-11e7-bc81-df860c749e98.gif');
+                 $('#gun').css('top', '73%');
+                 guntype = 0;
+                 speed = 45;
+             }
+         }
+    break;
+     case 50:
+         if (reloading === 0) {
+             if (shooting === 0) {
+                 if (gungiven > 0) {
+                     $('#gun').attr('src', 'http://piskel-imgstore-b.appspot.com/img/f57f1914-6cf8-11e7-afe0-699a4a813824.gif');
+                     $('#gun').css('top', '83%');
+                     guntype = 1;
+                     speed = 30;
+                 }
+             }
+         }
+    break;
+     case 51:
+         if (reloading === 0) {
+             if (shooting === 0) {
+                 if (gungiven > 1) {
+                     $('#gun').attr('src', 'http://piskel-imgstore-b.appspot.com/img/222ac038-6d69-11e7-b4da-2f2a2c391662.gif');
+                     $('#gun').css('top', '87%');
+                     guntype = 2;
+                     speed = 15;
+                 }
+             }
+         }
+     break;
+     case 82:
+         if (shooting === 0) {
+             if (reloading === 0) {
+                 if (ammo !== 15) {
+                     reloading = 1;
+                     $('#reloadBox').fadeIn('Slowest');
+                     $('#reloadBox').fadeOut('Slowest');
+                     $('#reloadBox').fadeIn('Slowest');
+                     $('#reloadBox').fadeOut('Slowest');
+                     setTimeout(function() {
+                         reloading = 0;
+                         ammo = 15;
+                     }, 5000);
+                 }
+             }
+         }
+     break;
+     case 66:
+         if (boosts > 0) {
+             if (boosting === 0) {
+                boosting = 1;
+                boosts = boosts - 1;
+                speed = 75;
+                setTimeout(function() {
+                    if (guntype === 2) {
+                        speed = 15;
+                    } else if (guntype === 1) {
+                        speed = 30;
+                    } else if (guntype === 0) {
+                        speed = 45;
+                    }
+                    boosting = 0;
+                }, 3000);
+             }
+         }
+     break;
+     case 83:
+         if (grenades > 0) {
+             grenadeKill();
+             grenades--;
+         }
+     break;
+     case 81:
+         for (var g = 0; g < enemiesNumber + 1; g++) {
+             if (parseInt(enemiesArray[g * 6 - 3]) === 0) {
+                 $('#enemy'+g.toString()).fadeOut('slowest');
+             }
+         }
+     break;
+case 67:
+childfun();
+break;
+ }
+ });
+function grenadeKill() {
+    for (var y = 0; y < enemiesNumber + 1; y++) {
+        if (parseInt(enemiesArray[y * 6 - 3]) > 0) {
+            enemiesArray[y * 6 - 3] = 0;
+            $('#enemy'+y.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/42a5a402-6e1d-11e7-883f-19ceb3c5660b.gif');
+            $('#enemy'+y.toString()).offset({left: $('#enemy'+y.toString()).offset().left, top: $('#enemy'+y.toString()).offset().top + Random(125, 250)});
+wavekills++;
+        }
+    }
+}
+function shoot() {
+     if (shooting === 0) {
+     if (reloading === 0) {
+    if (guntype === 0) {
+     shooting = 1;
+console.log('Mh');
+     $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/d0cad86b-6319-11e7-904a-b1f264b16906.gif');
+     setTimeout(function() {
+         $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/de218c7d-6319-11e7-884a-b1f264b16906.gif');
+             setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/efa8c5c7-6319-11e7-bca1-b1f264b16906.gif');
+                 shooting = 0;
+             }, 200);
+     }, 200);
+    } else if (guntype === 1) {
+        shooting = 1;
+console.log('Mh');
+     $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f57f1914-6cf8-11e7-afe0-699a4a813824.gif');
+     setTimeout(function() {
+         $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/1c7e8707-6e15-11e7-968f-19ceb3c5660b.gif');
+             setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/65a0b0ab-6cf6-11e7-8ac7-699a4a813824.gif');
+                 setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/8b20f56b-6cf6-11e7-bb6c-699a4a813824.gif');
+                    setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/a5db9a38-6cf6-11e7-b71c-699a4a813824.gif');
+                        setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/c02b9d5c-6cf6-11e7-bfb5-699a4a813824.gif');
+                setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f57f1914-6cf8-11e7-afe0-699a4a813824.gif');
+                 shooting = 0;
+                        }, 130);
+                        }, 130);
+                    }, 130);
+                }, 130);
+             }, 130);
+     }, 130);
+    } else if (guntype === 2) {
+        shooting = 1;
+                 setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/dcebe605-6d69-11e7-9f32-2f2a2c391662.gif');
+                    setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f04fa014-6d69-11e7-bc80-2f2a2c391662.gif');
+                        setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/fef69a78-6d69-11e7-9f0b-2f2a2c391662.gif');
+                setTimeout(function() {
+                 $('.guns').attr('src',
+'http://piskel-imgstore-b.appspot.com/img/222ac038-6d69-11e7-b4da-2f2a2c391662.gif');
+                 shooting = 0;
+                        }, 100);
+                        }, 100);
+                    }, 100);
+                }, 100);
+    }
+     }
+     }
+ }
+ setInterval(function() {
+     $('#pointp').html('wave: ' + (wave - 1).toString());
+     $('#ammop').html('Ammo: ' + ammo.toString());
+     $('#healthp').html('Health: ' + health.toString() + '%');
+     $('#boostp').html('Boosts: '+boosts.toString());
+     $('#grenadep').html('Grenades: '+ grenades.toString());
+if (health > 90) {
+$('#healthp').css('color', 'springgreen');
+} else if (health > 80) {
+$('#healthp').css('color', 'green');
+} else if (health > 70) {
+$('#healthp').css('color', 'darkgreen');
+} else if (health > 60) {
+$('#healthp').css('color', 'darkolivegreen');
+} else if (health > 50) {
+$('#healthp').css('color', 'brown');
+} else if (health > 40) {
+$('#healthp').css('color', 'rgb(255, 0, 0)');
+} else if (health > 30) {
+$('#healthp').css('color', 'red');
+} else if (health > 20) {
+$('#healthp').css('color', 'rgb(119, 0, 0)');
+} else if (health > 10) {
+$('#healthp').css('color', 'rgb(71, 0, 0)');
+} else {
+$('#healthp').css('color', 'black');
+}
+if (health === 0) {
+$('#crosshair').hide();
+$('#gun').hide();
+$('#pointp').hide();
+$('#ammop').hide();
+$('#healthp').hide();
+$('#godp').hide();
+$('#addb').hide();
+$('#diedS').show();
+$('#homebutton').hide();
+for (var t = 0; t < enemiesNumber + 1; t++) {
+$('#enemy'+t.toString()).hide();
+}
+setTimeout(function() {
+window.close();
+}, 7500);
+}
+ }, 15);
+ setInterval(function() {
+     points++;
+ }, 1000);
+ function addEnemy() {
+ enemiesNumber++;
+ enemiesArray.push("0");
+ enemiesArray.push("0");
+ enemiesArray.push("4");
+ enemiesArray.push("0");
+ enemiesArray.push("0");
+ enemiesArray.push("0");
+ $('body').append('<img src="http://piskel-imgstore-b.appspot.com/img/fa59aa94-6181-11e7-95c8-e5451b7c7b82.gif" id="enemy'+enemiesNumber.toString()+'"/>');
+ $('#enemy'+enemiesNumber.toString()).css('position', 'absolute');
+ $('#enemy'+enemiesNumber.toString()).css('left', Random(5, 85) + '%');
+ $('#enemy'+enemiesNumber.toString()).css('top', '45%');
+ $('#enemy'+enemiesNumber.toString()).css('width', '1750px');
+ $('#enemy'+enemiesNumber.toString()).css('height', '1400');
+ }
+ setInterval(function() {
+for (var i = 0; i < enemiesNumber + 1; i++) {
+if (parseInt(enemiesArray[i * 6 - 3]) > 0) {
+if (parseInt(enemiesArray[i * 6 - 4]) < 11) {
+if (parseInt(enemiesArray[i * 6 - 5]) === 0) {
+console.log('hallelujah');
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/5a76c28c-6316-11e7-a839-b1f264b16906.gif');
+$('#enemy'+i.toString()).css('width',
+($('#enemy'+i.toString()).width() + 175).toString() + 'px');
+$('#enemy'+i.toString()).css('height',
+($('#enemy'+i.toString()).height() + 175).toString() + 'px');
+enemiesArray[i * 6 - 5] = 1;
+enemiesArray[i * 6 - 4] = parseInt(enemiesArray[i * 6 - 4]) + 1;
+} else {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/6cd8f5a8-6316-11e7-b4dc-b1f264b16906.gif');
+$('#enemy'+i.toString()).css('width',
+($('#enemy'+i.toString()).width() + 175).toString() + 'px');
+$('#enemy'+i.toString()).css('height',
+($('#enemy'+i.toString()).height() + 175).toString() + 'px');
+enemiesArray[i * 6 - 5] = 0;
+enemiesArray[i * 6 - 4] = parseInt(enemiesArray[i * 6 - 4]) + 1;
+}
+} else {
+if ($('#enemy'+i.toString()).offset().left - 150 <
+$('#gun').offset().left + 10) {
+if ($('#enemy'+i.toString()).offset().left + 275 >
+$('#gun').offset().left + 10) {
+if (parseInt(enemiesArray[i * 6 - 1]) === 0) {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/5f0bae14-6345-11e7-b4db-b1f264b16906.gif');
+enemiesArray[i * 6 - 1] = 1;
+} else if (parseInt(enemiesArray[i * 6 - 1]) === 1) {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/8273c2c2-6345-11e7-9db4-b1f264b16906.gif');
+enemiesArray[i * 6 - 1] = 2;
+} else if (parseInt(enemiesArray[i * 6 - 1]) === 2) {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/a037c5cf-6345-11e7-894d-b1f264b16906.gif');
+if (godMode === 0) {
+if (health > 10) {
+health = health - Random(5, 10);
+bloodSplatter();
+} else {
+health = 0;
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+bloodSplatter();
+$('#crosshair').hide();
+$('#deadbutton').show();
+}
+}
+enemiesArray[i * 6 - 1] = 3;
+} else {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/fa59aa94-6181-11e7-95c8-e5451b7c7b82.gif');
+enemiesArray[i * 6 - 1] = 0;
+}
+} else {
+if (parseInt(enemiesArray[i * 6]) === 0) {
+$('#enemy'+i.toString()).attr('src', 'http://piskel-imgstore-b.appspot.com/img/122985d7-63ce-11e7-bace-b1f264b16906.gif');
+$('#enemy'+i.toString()).offset({left:
+$('#enemy'+i.toString()).offset().left + 75, top:
+$('#enemy'+i.toString()).offset().top});
+enemiesArray[i * 6] = 1;
+} else if (parseInt(enemiesArray[i * 6]) === 1) {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/a3fafc07-63ce-11e7-b278-b1f264b16906.gif');
+$('#enemy'+i.toString()).offset({left:
+$('#enemy'+i.toString()).offset().left + 75, top:
+$('#enemy'+i.toString()).offset().top});
+enemiesArray[i * 6] = 2;
+} else if (parseInt(enemiesArray[i * 6]) === 2) {
+if ($('#enemy'+i.toString()).offset().left + 275 >
+$('#gun').offset().left + 10) {
+enemiesArray[i * 6] = 0;
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/53838c87-63cc-11e7-ad17-b1f264b16906.gif');
+}
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b9d755a8-63ce-11e7-ab71-b1f264b16906.gif');
+$('#enemy'+i.toString()).offset({left:
+$('#enemy'+i.toString()).offset().left + 50, top:
+$('#enemy'+i.toString()).offset().top});
+enemiesArray[i * 6] = 0;
+}
+}
+} else {
+if (parseInt(enemiesArray[i * 6]) === 0) {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/3434841c-63cd-11e7-bc6a-b1f264b16906.gif');
+$('#enemy'+i.toString()).offset({left:
+$('#enemy'+i.toString()).offset().left - 75, top:
+$('#enemy'+i.toString()).offset().top});
+enemiesArray[i * 6] = 1;
+} else if (parseInt(enemiesArray[i * 6]) === 1) {
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9a8b8373-63cc-11e7-ab6c-b1f264b16906.gif');
+$('#enemy'+i.toString()).offset({left:
+$('#enemy'+i.toString()).offset().left - 75, top:
+$('#enemy'+i.toString()).offset().top});
+enemiesArray[i * 6] = 2;
+} else if (parseInt(enemiesArray[i * 6]) === 2) {
+if ($('#enemy'+i.toString()).offset().left - 150 <
+$('#gun').offset().left + 10) {
+enemiesArray[i * 6] = 0;
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/53838c87-63cc-11e7-ad17-b1f264b16906.gif');
+}
+$('#enemy'+i.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/05228e40-63cc-11e7-bfb8-b1f264b16906.gif');
+$('#enemy'+i.toString()).offset({left:
+$('#enemy'+i.toString()).offset().left - 50, top:
+$('#enemy'+i.toString()).offset().top});
+enemiesArray[i * 6] = 0;
+}
+}
+}
+}
+}
+ }, 250);
+ setInterval(function() {
+for (var j = 1; j < enemiesNumber + 1; j++) {
+if (guntype === 0) {
+if ($('#crosshair').offset().left + 40 <
+$('#enemy'+j.toString()).offset().left +
+$('#enemy'+j.toString()).width() / 14) {
+if ($('#crosshair').offset().left + 60 >
+$('#enemy'+j.toString()).offset().left) {
+if ($('#crosshair').offset().top + 40 <
+$('#enemy'+j.toString()).offset().top +
+$('#enemy'+j.toString()).height() / 9) {
+if ($('#crosshair').offset().top + 60 > $('#enemy'+j.toString()).offset().top) {
+enemiesArray[j * 6 - 2] = 1;
+if ($('#crosshair').offset().left + 40 <
+$('#enemy'+j.toString()).offset().left +
+$('#enemy'+j.toString()).width() / 18) {
+if ($('#crosshair').offset().left + 60 >
+$('#enemy'+j.toString()).offset().left +
+$('#enemy'+j.toString()).width() / 30) {
+if ($('#crosshair').offset().top + 40 >
+$('#enemy'+j.toString()).offset().top +
+$('#enemy'+j.toString()).height() / 40) {
+enemiesArray[j * 6 - 2] = 2;
+console.log('Horaa!');
+}
+}
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else if (guntype > 0) {
+if ($('#crosshair').offset().left + 100 <
+$('#enemy'+j.toString()).offset().left +
+$('#enemy'+j.toString()).width() / 14) {
+if ($('#crosshair').offset().left + 130 >
+$('#enemy'+j.toString()).offset().left) {
+if ($('#crosshair').offset().top + 60 <
+$('#enemy'+j.toString()).offset().top +
+$('#enemy'+j.toString()).height() / 9) {
+if ($('#crosshair').offset().top + 80 > $('#enemy'+j.toString()).offset().top) {
+enemiesArray[j * 6 - 2] = 1;
+if ($('#crosshair').offset().left + 100 <
+$('#enemy'+j.toString()).offset().left +
+$('#enemy'+j.toString()).width() / 18) {
+if ($('#crosshair').offset().left + 130 >
+$('#enemy'+j.toString()).offset().left +
+$('#enemy'+j.toString()).width() / 30) {
+if ($('#crosshair').offset().top + 40 >
+$('#enemy'+j.toString()).offset().top +
+$('#enemy'+j.toString()).height() / 40) {
+enemiesArray[j * 6 - 2] = 2;
+console.log('Horaa!');
+}
+}
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+} else {
+enemiesArray[j * 6 - 2] = 0;
+}
+}
+}
+ }, 30);
+ function bloodSpray() {
+ if (childmode === 0) {
+     if (reloading === 0) {
+if (bloodied === 0) {
+bloodied = 1;
+         bloodNumber++;
+             $('body').append('<img src="http://piskel-imgstore-b.appspot.com/img/233fe3a3-5f4a-11e7-88fa-e909ea6c18a2.gif"id="blood'+bloodNumber.toString()+'"/>');
+             $('#blood'+bloodNumber.toString()).css('z-index', '70');
+             $('#blood'+bloodNumber.toString()).css('position', 'absolute');
+             $('#blood'+bloodNumber.toString()).css('left', (mouseX -
+Random(325, 425)).toString() + 'px');
+             $('#blood'+bloodNumber.toString()).css('top', (mouseY -
+Random(350, 425)).toString() + 'px');
+             $('#blood'+bloodNumber.toString()).css('width', '750px');
+             $('#blood'+bloodNumber.toString()).css('height', '750px');
+             setTimeout(function() {
+                 $('#blood' + bloodNumber.toString()).hide();
+bloodied = 0;
+             }, 300);
+}
+     }
+}
+ }
+  function bloodSpray2() {
+     if (reloading === 0) {
+if (bloodied2 === 0) {
+bloodied2 = 1;
+         bloodNumber2++;
+             $('body').append('<imgsrc="http://piskel-imgstore-b.appspot.com/img/233fe3a3-5f4a-11e7-88fa-e909ea6c18a2.gif"id="blood'+bloodNumber2.toString()+'"/>');
+             $('#blood'+bloodNumber2.toString()).css('z-index', '70');
+             $('#blood'+bloodNumber2.toString()).css('position', 'absolute');
+             $('#blood'+bloodNumber2.toString()).css('left', (mouseX -
+Random(325, 425)).toString() + 'px');
+             $('#blood'+bloodNumber2.toString()).css('top', (mouseY -
+Random(350, 425)).toString() + 'px');
+             $('#blood'+bloodNumber2.toString()).css('width', '750px');
+             $('#blood'+bloodNumber2.toString()).css('height', '750px');
+             setTimeout(function() {
+                 $('#blood' + bloodNumber2.toString()).hide();
+bloodied2 = 0;
+             }, 300);
+}
+     }
+ }
+ function kill() {
+ enemiesArray[current * 6 - 3] = 0;
+ if (childmode === 0) {
+killtype = Random(1, 3);
+ } else {
+killtype = 1;
+$('#enemy'+current.toString()).hide();
+ }
+ if (killtype === 1) {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/23b1e091-6336-11e7-95f1-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9cc4718c-6336-11e7-a5c9-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b4292ebd-6336-11e7-b0f1-b1f264b16906.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 75)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b8d08a54-633c-11e7-8b5e-b1f264b16906.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(50, 75)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/16d9b838-6337-11e7-951e-b1f264b16906.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(50, 100)});
+started = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 100);
+}, 100);
+}, 100);
+}, 100);
+} else if (killtype === 2) {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/055a0fb0-6498-11e7-9629-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b76131a6-6497-11e7-82eb-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f45d1d9c-6497-11e7-af3a-dd6ed54ef398.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2cd1539e-6498-11e7-ae23-dd6ed54ef398.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/7eece01c-64bd-11e7-993f-dd6ed54ef398.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9c0037d1-64bd-11e7-9d7d-dd6ed54ef398.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(50, 100)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/addc306b-64bd-11e7-b91e-dd6ed54ef398.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(50, 100)});
+started = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 200);
+}, 200);
+}, 600);
+}, 400);
+}, 400);
+}, 400);
+} else if (killtype === 3) {
+    $('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/6d1519dc-6c96-11e7-97ef-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/cb56a845-6c96-11e7-b030-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2b962cae-6c97-11e7-8761-bb9a84c8bfa3.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/1481be87-6c9b-11e7-b52c-bb9a84c8bfa3.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/ef0bf6eb-6c99-11e7-a0a1-bb9a84c8bfa3.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/616d4430-6c99-11e7-9478-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/e83bd414-6c98-11e7-9b16-bb9a84c8bfa3.gif');
+$('#enemy'+current.toString()).offset({left:
+$('#enemy'+current.toString()).offset().left ,top:
+$('#enemy'+current.toString()).offset().top + Random(25, 75)});
+started = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}
+ }
+  function kill2() {
+ enemiesArray[current2 * 6 - 3] = 0;
+if (childmode === 0) {
+killtype = Random(1, 3);
+ } else {
+killtype = 1;
+$('#enemy'+current2.toString()).hide();
+ }
+ if (killtype === 1) {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/23b1e091-6336-11e7-95f1-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9cc4718c-6336-11e7-a5c9-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b4292ebd-6336-11e7-b0f1-b1f264b16906.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 75)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b8d08a54-633c-11e7-8b5e-b1f264b16906.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(50, 75)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/16d9b838-6337-11e7-951e-b1f264b16906.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(50, 100)});
+started = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 100);
+}, 100);
+}, 100);
+}, 100);
+} else if (killtype === 2) {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/055a0fb0-6498-11e7-9629-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b76131a6-6497-11e7-82eb-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f45d1d9c-6497-11e7-af3a-dd6ed54ef398.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2cd1539e-6498-11e7-ae23-dd6ed54ef398.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/7eece01c-64bd-11e7-993f-dd6ed54ef398.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9c0037d1-64bd-11e7-9d7d-dd6ed54ef398.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(50, 100)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/addc306b-64bd-11e7-b91e-dd6ed54ef398.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(50, 100)});
+started2 = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 200);
+}, 200);
+}, 600);
+}, 400);
+}, 400);
+}, 400);
+} else if (killtype === 3) {
+    $('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/6d1519dc-6c96-11e7-97ef-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/cb56a845-6c96-11e7-b030-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2b962cae-6c97-11e7-8761-bb9a84c8bfa3.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/1481be87-6c9b-11e7-b52c-bb9a84c8bfa3.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/ef0bf6eb-6c99-11e7-a0a1-bb9a84c8bfa3.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/616d4430-6c99-11e7-9478-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current2.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/e83bd414-6c98-11e7-9b16-bb9a84c8bfa3.gif');
+$('#enemy'+current2.toString()).offset({left:
+$('#enemy'+current2.toString()).offset().left ,top:
+$('#enemy'+current2.toString()).offset().top + Random(25, 75)});
+started2 = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}
+ }
+  function kill3() {
+ enemiesArray[current3 * 6 - 3] = 0;
+if (childmode === 0) {
+killtype = Random(1, 3);
+ } else {
+killtype = 1;
+$('#enemy'+current3.toString()).hide();
+ }
+ if (killtype === 1) {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/23b1e091-6336-11e7-95f1-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9cc4718c-6336-11e7-a5c9-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b4292ebd-6336-11e7-b0f1-b1f264b16906.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 75)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b8d08a54-633c-11e7-8b5e-b1f264b16906.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(50, 75)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/16d9b838-6337-11e7-951e-b1f264b16906.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(50, 100)});
+started3 = 0;
+if (sandstarted === 0) {
+wavekills++;
+}
+}, 100);
+}, 100);
+}, 100);
+}, 100);
+} else if (killtype === 2) {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/055a0fb0-6498-11e7-9629-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b76131a6-6497-11e7-82eb-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f45d1d9c-6497-11e7-af3a-dd6ed54ef398.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2cd1539e-6498-11e7-ae23-dd6ed54ef398.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/7eece01c-64bd-11e7-993f-dd6ed54ef398.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9c0037d1-64bd-11e7-9d7d-dd6ed54ef398.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(50, 100)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/addc306b-64bd-11e7-b91e-dd6ed54ef398.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(50, 100)});
+started3 = 0;
+if (sandstarted === 0) {
+wavekills++;
+}
+}, 200);
+}, 200);
+}, 600);
+}, 400);
+}, 400);
+}, 400);
+} else if (killtype === 3) {
+    $('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/6d1519dc-6c96-11e7-97ef-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/cb56a845-6c96-11e7-b030-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2b962cae-6c97-11e7-8761-bb9a84c8bfa3.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/1481be87-6c9b-11e7-b52c-bb9a84c8bfa3.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/ef0bf6eb-6c99-11e7-a0a1-bb9a84c8bfa3.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/616d4430-6c99-11e7-9478-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/e83bd414-6c98-11e7-9b16-bb9a84c8bfa3.gif');
+$('#enemy'+current3.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current3.toString()).offset().top + Random(25, 75)});
+started3 = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}
+ }
+function kill4() {
+ enemiesArray[current3 * 6 - 3] = 0;
+if (childmode === 0) {
+killtype = Random(1, 3);
+ } else {
+killtype = 1;
+$('#enemy'+current4.toString()).hide();
+ }
+ if (killtype === 1) {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/23b1e091-6336-11e7-95f1-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9cc4718c-6336-11e7-a5c9-b1f264b16906.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b4292ebd-6336-11e7-b0f1-b1f264b16906.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 75)});
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b8d08a54-633c-11e7-8b5e-b1f264b16906.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current3.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(50, 75)});
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/16d9b838-6337-11e7-951e-b1f264b16906.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(50, 100)});
+started4 = 0;
+if (sandstarted === 0) {
+wavekills++;
+}
+}, 100);
+}, 100);
+}, 100);
+}, 100);
+} else if (killtype === 2) {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/055a0fb0-6498-11e7-9629-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/b76131a6-6497-11e7-82eb-dd6ed54ef398.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/f45d1d9c-6497-11e7-af3a-dd6ed54ef398.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2cd1539e-6498-11e7-ae23-dd6ed54ef398.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current3.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/7eece01c-64bd-11e7-993f-dd6ed54ef398.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/9c0037d1-64bd-11e7-9d7d-dd6ed54ef398.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(50, 100)});
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/addc306b-64bd-11e7-b91e-dd6ed54ef398.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(50, 100)});
+started4 = 0;
+if (sandstarted === 0) {
+wavekills++;
+}
+}, 200);
+}, 200);
+}, 600);
+}, 400);
+}, 400);
+}, 400);
+} else if (killtype === 3) {
+    $('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/6d1519dc-6c96-11e7-97ef-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/cb56a845-6c96-11e7-b030-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/2b962cae-6c97-11e7-8761-bb9a84c8bfa3.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/1481be87-6c9b-11e7-b52c-bb9a84c8bfa3.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/ef0bf6eb-6c99-11e7-a0a1-bb9a84c8bfa3.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 50)});
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/616d4430-6c99-11e7-9478-bb9a84c8bfa3.gif');
+setTimeout(function() {
+$('#enemy'+current4.toString()).attr('src',
+'http://piskel-imgstore-b.appspot.com/img/e83bd414-6c98-11e7-9b16-bb9a84c8bfa3.gif');
+$('#enemy'+current4.toString()).offset({left:
+$('#enemy'+current4.toString()).offset().left ,top:
+$('#enemy'+current4.toString()).offset().top + Random(25, 75)});
+started4 = 0;
+if (sandstarted === 0) {
+    wavekills++;
+}
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}, 200);
+}
+ }
+ function bloodSplatter() {
+ if (childmode === 0) {
+bloodtype = Random(1, 10);
+bloodSplat++;
+if (bloodtype === 1) {
+$('body').append('<imgsrc="http://www.imarvintpa.com/Mapping/Overlays/Blood/Blood%20splatter%2019-sc.png"id="splat'+bloodSplat.toString()+'"/>');
+} else if (bloodtype === 2) {
+$('body').append('<imgsrc="http://img14.deviantart.net/a426/i/2012/247/2/4/png_blood_by_paradise234-d5dkt3t.png"id="splat'+bloodSplat.toString()+'"/>');
+} else if (bloodtype === 3) {
+$('body').append('<imgsrc="http://www.powerpointhintergrund.com/uploads/2017/06/zombie-blood-splatter-wallpaper-psvitabloodtransparent--8.png"id="splat'+bloodSplat.toString()+'"/>');
+} else if (bloodtype === 4) {
+$('body').append('<imgsrc="http://www.freeiconspng.com/uploads/blood-transparent-8.png"id="splat'+bloodSplat.toString()+'"/>');
+} else if (bloodtype === 5){
+$('body').append('<imgsrc="http://www.imarvintpa.com/Mapping/Overlays/Blood/Blood%20splatter%2012-sc.png"id="splat'+bloodSplat.toString()+'" />');
+} else if (bloodtype === 6) {
+$('body').append('<imgsrc="http://pngimg.com/uploads/blood/blood_PNG6124.png"id="splat'+bloodSplat.toString()+'" />');
+} else if (bloodtype === 7) {
+$('body').append('<imgsrc="http://tubomania.t.u.pic.centerblog.net/66860253.png"id="splat'+bloodSplat.toString()+'" />');
+} else if (bloodtype === 8) {
+$('body').append('<imgsrc="http://www.freepngimg.com/thumb/blood/67-blood-png-image-thumb.png"id="splat'+bloodSplat.toString()+'" />');
+} else if (bloodtype === 9) {
+$('body').append('<imgsrc="https://www.hrabova.info/wp-content/uploads/2017/01/krev.png"id="splat'+bloodSplat.toString()+'" />');
+} else if (bloodtype === 10) {
+$('body').append('<imgsrc="https://lh3.googleusercontent.com/-iFNyyI8GXHk/V8g8dN4uVVI/AAAAAAAAAcM/nIem5lOhGQ4jIEwgAgtVMuzHTtcWFdBDACL0B/w800-h800/kisekae_2_prop___blood_splatter_by_zebuta-d9blxeo.png"id="splat'+bloodSplat.toString()+'" />');
+}
+$('#splat'+bloodSplat.toString()).css('position', 'absolute');
+$('#splat'+bloodSplat.toString()).css('left', '40%');
+$('#splat'+bloodSplat.toString()).css('top', '40%');
+$('#splat'+bloodSplat.toString()).css('width', '350px');
+$('#splat'+bloodSplat.toString()).css('height', '350px');
+$('#splat'+bloodSplat.toString()).css('z-index', '150');
+console.log('His index is ' + $('#splat'+bloodSplat.toString()).css('z-index'));
+setTimeout(function() {
+if (health > 0) {
+for (var y = 0; y < bloodSplat + 1; y++) {
+$('#splat'+y.toString()).fadeOut('slowest');
+}
+}
+}, 2000);
+}
+ }
+ function headshoting() {
+ headshots++;
+ $('body').append('<h4 id="headshotp'+headshots.toString()+'">Headshot!</h4>');
+ $('#headshotp'+headshots.toString()).css('position', 'absolute');
+ $('#headshotp'+headshots.toString()).css('left', (mouseX -
+75).toString() + 'px');
+ $('#headshotp'+headshots.toString()).css('top', (mouseY -
+75).toString() + 'px');
+ $('#headshotp'+headshots.toString()).css('color', 'crimson');
+ setTimeout(function() {
+for (var z = 0; z < headshots + 1; z++) {
+$('#headshotp'+z.toString()).fadeOut('slowest');
+}
+ }, 500);
+ }
+ setInterval(function() {
+if (readyToAdd === 1) {
+if (sandstarted === 0) {
+enemiesAdded++;
+addEnemy();
+if (enemiesAdded === wave) {
+readyToAdd = 0;
+enemiesAdded = 0;
+}
+}
+}
+ }, 1000);
+ setInterval(function() {
+ if (completed === 0) {
+if (wavekills === wave) {
+completed = 1;
+$('#wavecompletep').fadeIn('slowest');
+setTimeout(function() {
+$('#wavecompletep').fadeOut('slowest');
+newWave();
+wavekills = 0;
+completed = 0;
+}, 3000);
+}
+}
+ }, 100);
+ function newWave() {
+wave++;
+if (grenwave < 3) {
+    grenwave++;
+} else {
+    grenades++;
+    grenwave = 0;
+}
+wavekills = 0;
+readyToAdd = 1;
+ }
+ function start() {
+wave = 1;
+setTimeout(function() {
+wavekills = 0;
+newWave();
+}, 2000);
+ }
+function survivalstart() {
+    offmenu = 1;
+    start();
+    $('#titleimg').hide();
+    $('#titleimg2').hide();
+    $('#sub').hide();
+    $('#crosshair').show();
+    $('#sab').hide();
+    $('#godp').show();
+    $('#exb').hide();
+    $('#homebutton').show();
+    $('#glitchp').show();
+    $('#healthp').show();
+    $('#ammop').show();
+    $('#pointp').show();
+    $('#godp').show();
+    $('#gun').show();
+    $('#boostp').show();
+    $('#grenadep').show();
+};
+function sandboxstart() {
+    gungiven = 3;
+    offmenu = 1;
+    $('#titleimg').hide();
+    $('#titleimg2').hide();
+    $('#sub').hide();
+    $('#crosshair').show();
+    $('#pointp').hide();
+    $('#sab').hide();
+    $('#addb').show();
+    sandstarted = 1;
+    $('#godp').show();
+    $('#exb').hide();
+    $('#homebutton').show();
+    $('#glitchp').show();
+    $('#healthp').show();
+    $('#ammop').show();
+    $('#pointp').show();
+    $('#godp').show();
+    $('#gun').show();
+    $('#boostp').show();
+    boosts = 999;
+    grenades = 999;
+    $('#grenadep').show();
+}
+function extrastart() {
+    $('#titleimg').hide();
+    $('#titleimg2').hide();
+    $('#sub').hide();
+    $('#pointp').hide();
+    $('#sab').hide();
+    $('#exb').hide();
+    $('#glitchp').hide();
+    $('#healthp').hide();
+    $('#ammop').hide();
+    $('#pointp').hide();
+    $('#godp').hide();
+$('#childb').hide();
+    $('#homebutton').show();
+    $('#extrastuff').show();
+}
+setInterval(function() {
+    if (wave > 5) {
+        if (gungiven === 0) {
+            gungiven = 1;
+            guntype = 1;
+            $('#gun').attr('src', 'http://piskel-imgstore-b.appspot.com/img/f57f1914-6cf8-11e7-afe0-699a4a813824.gif');
+            $('#gun').offset({left: $('#gun').offset().left, top: $('#gun').offset().top + 50});
+            $('#gun').css('top', '83%');
+        }
+    }
+}, 15);
+setInterval(function() {
+    if (wave > highscore) {
+        highscore = wave;
+        $('#pointp').css('color', 'red');
+        $('#highscorep').html('Survival Highscore: ' + highscore.toString());
+        localStorage.setItem('highscorelocal', highscore);
+    }
+}, 15);
+setInterval(function() {
+    if (wave > 10) {
+        if (gungiven === 1) {
+            gungiven = 2;
+            guntype = 2;
+            $('#gun').attr('src', 'http://piskel-imgstore-b.appspot.com/img/222ac038-6d69-11e7-b4da-2f2a2c391662.gif');
+            $('#gun').css('top', '87%');
+        }
+    }
+}, 15);
+setInterval(function() {
+    if (points > 299) {
+        points = 0;
+        boosts++;
+    }
+}, 15);
+function newtip() {
+    $('#tipp').html('TIP: '+tips[Random(0, 12)]);
+}
+setInterval(function() {
+    if (health > 92 || health !== 100) {
+        health = 100;
+    } else {
+        health = health + Random(5, 7);
+    }
+}, 10000);
+function childfun() {
+    if (childmode === 0) {
+        childmode = 1;
+$('#childb').html('Child-Friendly Mode is On');
+    } else {
+        childmode = 0;
+$('#childb').html('Child-Friendly Mode is Off');    
+}
+}
+ </script>
+ </html>
